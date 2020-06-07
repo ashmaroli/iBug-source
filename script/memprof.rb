@@ -9,6 +9,8 @@ report = MemoryProfiler.report do
   Jekyll::Commands::Build.process({
     "source"      => File.expand_path("..", __dir__),
     "destination" => File.expand_path("../_site", __dir__),
+    "verbose"     => true,
+    "trace"       => true,
   })
 end
 
