@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+return if (Jekyll::Drops.const_get("PageDrop", false) rescue false)
+
 module Jekyll
   class Page
     # For backwards-compatibility in subclasses that do not redefine
