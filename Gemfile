@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", '~> 4.0.1'
+gem "jekyll", ENV["JEKYLL_VERSION"]
 gem "minimal-mistakes-jekyll", '>= 4.19.3'
 gem "liquid-c", '~> 4.0'
 
@@ -35,8 +35,14 @@ group :jekyll_plugins do
   gem "jekyll-environment-variables"
   gem "jekyll-tidy"
   gem "jekyll-last-modified"
-  gem "jekyll-assets"
+  # gem "jekyll-assets"
   gem "jekyll-algolia"
   gem "jekyll-archives", '>= 2.2.1'
   gem "jekyll-paginate-v2", '>= 3.0.0'
+end
+
+platforms :mingw, :x64_mingw, :mswin do
+  gem "tzinfo", "~> 1.2"
+  gem "tzinfo-data"
+  gem "wdm", "~> 0.1.1"
 end

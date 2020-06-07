@@ -1,21 +1,18 @@
 dist: bionic
 language: ruby
-rvm: "2.6.5"
+rvm: 2.6.5
 cache: bundler
 
 git:
-  depth: 3
+  depth: 1
   submodules: false
 
 env:
-  - JEKYLL_ENV=production LC_ALL=C.UTF-8
+  global:
+    - JEKYLL_ENV=production
+    - LC_ALL=C.UTF-8
+  jobs:
+    - JEKYLL_VERSION=4.0.1
+    - JEKYLL_VERSION=4.1.0
 
-before_script:
-  - script/prepare.sh
-
-script:
-  - bundle exec jekyll build --profile --trace
-
-after_success:
-  - script/patch.sh
-  - script/deploy-travis.sh
+script: bundle exec jekyll build --trace
