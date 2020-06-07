@@ -3,6 +3,9 @@
 require "jekyll"
 require "memory_profiler"
 
+start_time = nil
+end_time = nil
+
 report = MemoryProfiler.report do
   start_time = Time.now
   Jekyll::Commands::Build.process({
