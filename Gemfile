@@ -46,3 +46,5 @@ platforms :mingw, :x64_mingw, :mswin do
   gem "tzinfo-data"
   gem "wdm", "~> 0.1.1"
 end
+
+gem "memory_profiler"

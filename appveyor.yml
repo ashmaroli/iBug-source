@@ -19,7 +19,7 @@ test_script:
   - ruby --version
   - gem --version
   - bundler --version
-  - bundle exec jekyll build --trace
+  - bundle exec ruby script/memprof.rb
 
 cache:
   # If one of the files after the right arrow changes, cache will be invalidated
