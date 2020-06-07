@@ -14,5 +14,6 @@ env:
   jobs:
     - JEKYLL_VERSION=4.0.1
     - JEKYLL_VERSION=4.1.0
+    - JEKYLL_UPSTREAM=true
 
 script: bundle exec ruby script/memprof.rb

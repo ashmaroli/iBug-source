@@ -1,6 +1,13 @@
 source "https://rubygems.org"
 
-gem "jekyll", ENV["JEKYLL_VERSION"]
+if ENV["JEKYLL_UPSTREAM"]
+  gem "jekyll", github: "master"
+elsif ENV["JEKYLL_VERSION"]
+  gem "jekyll", ENV["JEKYLL_VERSION"]
+else
+  gem "jekyll"
+end
+
 gem "minimal-mistakes-jekyll", '>= 4.19.3'
 gem "liquid-c", '~> 4.0'
 
