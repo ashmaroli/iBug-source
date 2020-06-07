@@ -3,19 +3,15 @@
 require "jekyll"
 require "memory_profiler"
 
-start_time = nil
-end_time = nil
+Jekyll.logger.info ""
 
 report = MemoryProfiler.report do
-  start_time = Time.now
   Jekyll::Commands::Build.process({
     "source"      => File.expand_path("..", __dir__),
     "destination" => File.expand_path("../_site", __dir__),
   })
-  end_time = Time.now
 end
 
-Jekyll.logger.info "", "done in #{(end_time - start_time).round(3)} seconds."
 Jekyll.logger.info ""
 
 if ENV["CI"]
