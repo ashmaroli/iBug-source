@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 if ENV["JEKYLL_UPSTREAM"]
-  gem "jekyll", github: "master"
+  gem "jekyll", github: "jekyll/jekyll"
 elsif ENV["JEKYLL_VERSION"]
   gem "jekyll", ENV["JEKYLL_VERSION"]
 else
