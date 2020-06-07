@@ -15,5 +15,6 @@ env:
     - JEKYLL_VERSION=4.0.1
     - JEKYLL_VERSION=4.1.0
     - JEKYLL_UPSTREAM=true
+    - JEKYLL_UPSTREAM=true PAGE_EXCERPTS=true
 
 script: bundle exec ruby script/memprof.rb

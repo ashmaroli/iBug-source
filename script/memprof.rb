@@ -5,13 +5,16 @@ require "memory_profiler"
 
 Jekyll.logger.info ""
 
+base_config = {
+  "source"      => File.expand_path("..", __dir__),
+  "destination" => File.expand_path("../_site", __dir__),
+  "trace"       => true,
+}
+
+effective_config = ENV["PAGE_EXCERPTS"] ? base_config.merge("page_excerpts" => true) : base_config
+
 report = MemoryProfiler.report do
-  Jekyll::Commands::Build.process({
-    "source"      => File.expand_path("..", __dir__),
-    "destination" => File.expand_path("../_site", __dir__),
-    "verbose"     => true,
-    "trace"       => true,
-  })
+  Jekyll::Commands::Build.process(effective_config)
 end
 
 Jekyll.logger.info ""

@@ -11,6 +11,8 @@ environment:
     - JEKYLL_VERSION: 4.0.1
     - JEKYLL_VERSION: 4.1.0
     - JEKYLL_UPSTREAM: true
+    - JEKYLL_UPSTREAM: true
+      PAGE_EXCERPTS: true
 
 install:
   - SET PATH=C:\Ruby%RUBY_FOLDER_VER%-x64\bin;%PATH%
